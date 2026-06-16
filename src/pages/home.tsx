@@ -917,6 +917,7 @@ export default function Home() {
           <div className="pt-6 md:pt-8 border-t border-gray-800 text-center text-gray-500 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm font-medium gap-2">
             <p>&copy; 2026 Balaji R. All Rights Reserved.</p>
             <p>North Bangalore's Premium Real Estate Consultancy</p>
+            <p>Developed by <span className="text-primary font-semibold">Kamakshivalli</span></p>
           </div>
         </div>
       </footer>
