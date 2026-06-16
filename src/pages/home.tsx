@@ -453,7 +453,7 @@ export default function Home() {
                       <img
                         src={`/${p.logo}`}
                         alt={p.name}
-                        className="max-h-10 max-w-[140px] w-auto object-contain"
+                        className={`w-auto object-contain ${p.name === 'Prestige' ? 'max-h-16 max-w-[160px]' : 'max-h-10 max-w-[140px]'}`}
                         loading="lazy"
                       />
                     </div>
