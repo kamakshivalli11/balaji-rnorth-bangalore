@@ -7,7 +7,8 @@ import {
   Building, Users, Target, MessageCircle, Award,
   HandshakeIcon, ClipboardList, CalendarCheck, BadgeCheck, Compass
 } from "lucide-react";
-import { SiWhatsapp, SiInstagram, SiFacebook, SiYoutube, SiLinkedin } from "react-icons/si";
+import { SiWhatsapp, SiInstagram, SiFacebook, SiYoutube } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -903,7 +904,7 @@ export default function Home() {
                   <SiYoutube className="h-5 w-5" />
                 </a>
                 <a href="https://www.linkedin.com/in/balaji-r-bangalore-north-0a02b5343" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-blue-700 text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
-                  <SiLinkedin className="h-5 w-5" />
+                  <FaLinkedinIn className="h-5 w-5" />
                 </a>
               </div>
             </div>
