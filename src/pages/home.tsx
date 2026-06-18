@@ -940,41 +940,51 @@ export default function Home() {
       </footer>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
         <motion.a
           href="tel:+919036727332"
           className="bg-gray-900 text-white p-4 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.18)] flex items-center justify-center border-2 border-white"
           aria-label="Call Now"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.2, type: "spring", stiffness: 260, damping: 20 }}
+          transition={{ delay: 1.0, type: "spring", stiffness: 260, damping: 20 }}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.92 }}
           data-testid="link-float-call"
         >
           <Phone className="h-7 w-7" />
         </motion.a>
-        <motion.a
-          href="https://wa.me/919036727332?text=Hi%20Balaji%2C%20I%20am%20interested%20in%20a%20property%20consultation%20in%20North%20Bangalore.%20Please%20get%20in%20touch."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative bg-[#25D366] text-white p-4 rounded-full shadow-[0_8px_30px_rgba(37,211,102,0.4)] flex items-center justify-center border-2 border-white"
-          aria-label="WhatsApp"
-          data-testid="link-float-whatsapp"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: [0, 1.15, 1] }}
-          transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.92 }}
-        >
-          {/* Pulse ring */}
-          <motion.span
-            className="absolute w-14 h-14 rounded-full bg-[#25D366] opacity-40"
-            animate={{ scale: [1, 1.6, 1], opacity: [0.4, 0, 0.4] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
-          />
-          <SiWhatsapp className="h-7 w-7 relative z-10" />
-        </motion.a>
+
+        {[
+          { href: "https://wa.me/919036727332?text=Hi%20Balaji%2C%20I%20am%20interested%20in%20a%20property%20consultation%20in%20North%20Bangalore.%20Please%20get%20in%20touch.", icon: <SiWhatsapp className="h-5 w-5" />, color: "bg-[#25D366]", shadow: "rgba(37,211,102,0.4)", pulse: true },
+          { href: "https://www.instagram.com/balajirnorthbangalore?utm_source=qr", icon: <SiInstagram className="h-5 w-5" />, color: "bg-gradient-to-br from-[#f09433] via-[#dc2743] to-[#bc1888]", shadow: "rgba(220,39,67,0.4)", pulse: false },
+          { href: "https://www.facebook.com/share/r/14f47SkrXSg/?mibextid=wwXIfr", icon: <SiFacebook className="h-5 w-5" />, color: "bg-[#1877F2]", shadow: "rgba(24,119,242,0.4)", pulse: false },
+          { href: "https://youtube.com/@balajir-north?si=IQQ5kyLzwY273_lX", icon: <SiYoutube className="h-5 w-5" />, color: "bg-[#FF0000]", shadow: "rgba(255,0,0,0.4)", pulse: false },
+          { href: "https://www.linkedin.com/in/balaji-r-bangalore-north-0a02b5343", icon: <FaLinkedinIn className="h-5 w-5" />, color: "bg-[#0A66C2]", shadow: "rgba(10,102,194,0.4)", pulse: false },
+        ].map((item, i) => (
+          <motion.a
+            key={i}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`relative ${item.color} text-white p-3 rounded-full flex items-center justify-center border-2 border-white`}
+            style={{ boxShadow: `0 6px 20px ${item.shadow}` }}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.2 + i * 0.15, type: "spring", stiffness: 260, damping: 20 }}
+            whileHover={{ scale: 1.2, rotate: [0, -10, 10, 0] }}
+            whileTap={{ scale: 0.9 }}
+          >
+            {item.pulse && (
+              <motion.span
+                className="absolute w-12 h-12 rounded-full bg-[#25D366] opacity-40"
+                animate={{ scale: [1, 1.6, 1], opacity: [0.4, 0, 0.4] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+              />
+            )}
+            <span className="relative z-10">{item.icon}</span>
+          </motion.a>
+        ))}
       </div>
 
     </div>
