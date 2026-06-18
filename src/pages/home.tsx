@@ -7,7 +7,7 @@ import {
   Building, Users, Target, MessageCircle, Award,
   HandshakeIcon, ClipboardList, CalendarCheck, BadgeCheck, Compass
 } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { SiWhatsapp, SiInstagram, SiFacebook, SiYoutube, SiLinkedin } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -889,6 +889,23 @@ export default function Home() {
               <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-sm mt-4 md:mt-6">
                 Your Trusted Property Partner. Buying, Selling & Investing in North Bangalore with transparency and expertise.
               </p>
+              <div className="flex gap-3 mt-6">
+                <a href="https://wa.me/919036727332" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-[#25D366] text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                  <SiWhatsapp className="h-5 w-5" />
+                </a>
+                <a href="https://www.instagram.com/balajirnorthbangalore?utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-pink-600 text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                  <SiInstagram className="h-5 w-5" />
+                </a>
+                <a href="https://www.facebook.com/share/r/14f47SkrXSg/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-blue-600 text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                  <SiFacebook className="h-5 w-5" />
+                </a>
+                <a href="https://youtube.com/@balajir-north?si=IQQ5kyLzwY273_lX" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-red-600 text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                  <SiYoutube className="h-5 w-5" />
+                </a>
+                <a href="https://www.linkedin.com/in/balaji-r-bangalore-north-0a02b5343" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-blue-700 text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                  <SiLinkedin className="h-5 w-5" />
+                </a>
+              </div>
             </div>
             
             <div>
