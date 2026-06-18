@@ -891,19 +891,19 @@ export default function Home() {
                 Your Trusted Property Partner. Buying, Selling & Investing in North Bangalore with transparency and expertise.
               </p>
               <div className="flex gap-3 mt-6">
-                <a href="https://wa.me/919036727332" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-[#25D366] text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                <a href="https://wa.me/919036727332" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white p-3 rounded-full transition-colors duration-300">
                   <SiWhatsapp className="h-5 w-5" />
                 </a>
-                <a href="https://www.instagram.com/balajirnorthbangalore?utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-pink-600 text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                <a href="https://www.instagram.com/balajirnorthbangalore?utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] text-white p-3 rounded-full transition-colors duration-300">
                   <SiInstagram className="h-5 w-5" />
                 </a>
-                <a href="https://www.facebook.com/share/r/14f47SkrXSg/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-blue-600 text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                <a href="https://www.facebook.com/share/r/14f47SkrXSg/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="bg-[#1877F2] text-white p-3 rounded-full transition-colors duration-300">
                   <SiFacebook className="h-5 w-5" />
                 </a>
-                <a href="https://youtube.com/@balajir-north?si=IQQ5kyLzwY273_lX" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-red-600 text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                <a href="https://youtube.com/@balajir-north?si=IQQ5kyLzwY273_lX" target="_blank" rel="noopener noreferrer" className="bg-[#FF0000] text-white p-3 rounded-full transition-colors duration-300">
                   <SiYoutube className="h-5 w-5" />
                 </a>
-                <a href="https://www.linkedin.com/in/balaji-r-bangalore-north-0a02b5343" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-blue-700 text-gray-400 hover:text-white p-3 rounded-full transition-colors duration-300">
+                <a href="https://www.linkedin.com/in/balaji-r-bangalore-north-0a02b5343" target="_blank" rel="noopener noreferrer" className="bg-[#0A66C2] text-white p-3 rounded-full transition-colors duration-300">
                   <FaLinkedinIn className="h-5 w-5" />
                 </a>
               </div>
