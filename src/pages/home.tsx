@@ -949,8 +949,7 @@ export default function Home() {
       </footer>
 
       {/* Floating Action Buttons */}
-      {/* Mobile: horizontal bar at bottom center | Desktop: vertical on right */}
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex flex-row gap-2 z-50 md:left-auto md:right-6 md:bottom-6 md:translate-x-0 md:flex-col md:gap-3">
+      <div className="fixed bottom-6 right-4 md:right-6 flex flex-col gap-2 md:gap-3 z-50">
         <motion.a
           href="tel:+919036727332"
           className="bg-gray-900 text-white p-3 md:p-4 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.18)] flex items-center justify-center border-2 border-white"
