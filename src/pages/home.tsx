@@ -949,10 +949,11 @@ export default function Home() {
       </footer>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+      {/* Mobile: horizontal bar at bottom center | Desktop: vertical on right */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex flex-row gap-2 z-50 md:left-auto md:right-6 md:bottom-6 md:translate-x-0 md:flex-col md:gap-3">
         <motion.a
           href="tel:+919036727332"
-          className="bg-gray-900 text-white p-4 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.18)] flex items-center justify-center border-2 border-white"
+          className="bg-gray-900 text-white p-3 md:p-4 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.18)] flex items-center justify-center border-2 border-white"
           aria-label="Call Now"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -961,22 +962,22 @@ export default function Home() {
           whileTap={{ scale: 0.92 }}
           data-testid="link-float-call"
         >
-          <Phone className="h-7 w-7" />
+          <Phone className="h-5 w-5 md:h-7 md:w-7" />
         </motion.a>
 
         {[
-          { href: "https://wa.me/919036727332?text=Hi%20Balaji%2C%20I%20am%20interested%20in%20a%20property%20consultation%20in%20North%20Bangalore.%20Please%20get%20in%20touch.", icon: <SiWhatsapp className="h-5 w-5" />, color: "bg-[#25D366]", shadow: "rgba(37,211,102,0.4)", pulse: true },
-          { href: "https://www.instagram.com/balajirnorthbangalore?utm_source=qr", icon: <SiInstagram className="h-5 w-5" />, color: "bg-gradient-to-br from-[#f09433] via-[#dc2743] to-[#bc1888]", shadow: "rgba(220,39,67,0.4)", pulse: false },
-          { href: "https://www.facebook.com/share/r/14f47SkrXSg/?mibextid=wwXIfr", icon: <SiFacebook className="h-5 w-5" />, color: "bg-[#1877F2]", shadow: "rgba(24,119,242,0.4)", pulse: false },
-          { href: "https://youtube.com/@balajir-north?si=IQQ5kyLzwY273_lX", icon: <SiYoutube className="h-5 w-5" />, color: "bg-[#FF0000]", shadow: "rgba(255,0,0,0.4)", pulse: false },
-          { href: "https://www.linkedin.com/in/balaji-r-bangalore-north-0a02b5343", icon: <FaLinkedinIn className="h-5 w-5" />, color: "bg-[#0A66C2]", shadow: "rgba(10,102,194,0.4)", pulse: false },
+          { href: "https://wa.me/919036727332?text=Hi%20Balaji%2C%20I%20am%20interested%20in%20a%20property%20consultation%20in%20North%20Bangalore.%20Please%20get%20in%20touch.", icon: <SiWhatsapp className="h-4 w-4 md:h-5 md:w-5" />, color: "bg-[#25D366]", shadow: "rgba(37,211,102,0.4)", pulse: true },
+          { href: "https://www.instagram.com/balajirnorthbangalore?utm_source=qr", icon: <SiInstagram className="h-4 w-4 md:h-5 md:w-5" />, color: "bg-gradient-to-br from-[#f09433] via-[#dc2743] to-[#bc1888]", shadow: "rgba(220,39,67,0.4)", pulse: false },
+          { href: "https://www.facebook.com/share/r/14f47SkrXSg/?mibextid=wwXIfr", icon: <SiFacebook className="h-4 w-4 md:h-5 md:w-5" />, color: "bg-[#1877F2]", shadow: "rgba(24,119,242,0.4)", pulse: false },
+          { href: "https://youtube.com/@balajir-north?si=IQQ5kyLzwY273_lX", icon: <SiYoutube className="h-4 w-4 md:h-5 md:w-5" />, color: "bg-[#FF0000]", shadow: "rgba(255,0,0,0.4)", pulse: false },
+          { href: "https://www.linkedin.com/in/balaji-r-bangalore-north-0a02b5343", icon: <FaLinkedinIn className="h-4 w-4 md:h-5 md:w-5" />, color: "bg-[#0A66C2]", shadow: "rgba(10,102,194,0.4)", pulse: false },
         ].map((item, i) => (
           <motion.a
             key={i}
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`relative ${item.color} text-white p-3 rounded-full flex items-center justify-center border-2 border-white`}
+            className={`relative ${item.color} text-white p-2.5 md:p-3 rounded-full flex items-center justify-center border-2 border-white`}
             style={{ boxShadow: `0 6px 20px ${item.shadow}` }}
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
@@ -986,7 +987,7 @@ export default function Home() {
           >
             {item.pulse && (
               <motion.span
-                className="absolute w-12 h-12 rounded-full bg-[#25D366] opacity-40"
+                className="absolute w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#25D366] opacity-40"
                 animate={{ scale: [1, 1.6, 1], opacity: [0.4, 0, 0.4] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
               />
