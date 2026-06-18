@@ -891,21 +891,30 @@ export default function Home() {
                 Your Trusted Property Partner. Buying, Selling & Investing in North Bangalore with transparency and expertise.
               </p>
               <div className="flex gap-3 mt-6">
-                <a href="https://wa.me/919036727332" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white p-3 rounded-full">
-                  <SiWhatsapp className="h-5 w-5" />
-                </a>
-                <a href="https://www.instagram.com/balajirnorthbangalore?utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-[#f09433] via-[#dc2743] to-[#bc1888] text-white p-3 rounded-full">
-                  <SiInstagram className="h-5 w-5" />
-                </a>
-                <a href="https://www.facebook.com/share/r/14f47SkrXSg/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="bg-[#1877F2] text-white p-3 rounded-full">
-                  <SiFacebook className="h-5 w-5" />
-                </a>
-                <a href="https://youtube.com/@balajir-north?si=IQQ5kyLzwY273_lX" target="_blank" rel="noopener noreferrer" className="bg-[#FF0000] text-white p-3 rounded-full">
-                  <SiYoutube className="h-5 w-5" />
-                </a>
-                <a href="https://www.linkedin.com/in/balaji-r-bangalore-north-0a02b5343" target="_blank" rel="noopener noreferrer" className="bg-[#0A66C2] text-white p-3 rounded-full">
-                  <FaLinkedinIn className="h-5 w-5" />
-                </a>
+                {[
+                  { href: "https://wa.me/919036727332", icon: <SiWhatsapp className="h-5 w-5" />, color: "bg-[#25D366]", shadow: "rgba(37,211,102,0.4)" },
+                  { href: "https://www.instagram.com/balajirnorthbangalore?utm_source=qr", icon: <SiInstagram className="h-5 w-5" />, color: "bg-gradient-to-br from-[#f09433] via-[#dc2743] to-[#bc1888]", shadow: "rgba(220,39,67,0.4)" },
+                  { href: "https://www.facebook.com/share/r/14f47SkrXSg/?mibextid=wwXIfr", icon: <SiFacebook className="h-5 w-5" />, color: "bg-[#1877F2]", shadow: "rgba(24,119,242,0.4)" },
+                  { href: "https://youtube.com/@balajir-north?si=IQQ5kyLzwY273_lX", icon: <SiYoutube className="h-5 w-5" />, color: "bg-[#FF0000]", shadow: "rgba(255,0,0,0.4)" },
+                  { href: "https://www.linkedin.com/in/balaji-r-bangalore-north-0a02b5343", icon: <FaLinkedinIn className="h-5 w-5" />, color: "bg-[#0A66C2]", shadow: "rgba(10,102,194,0.4)" },
+                ].map((item, i) => (
+                  <motion.a
+                    key={i}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${item.color} text-white p-3 rounded-full`}
+                    style={{ boxShadow: `0 4px 14px ${item.shadow}` }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, type: "spring", stiffness: 260, damping: 20 }}
+                    whileHover={{ scale: 1.2, rotate: [0, -10, 10, 0], transition: { duration: 0.3 } }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    {item.icon}
+                  </motion.a>
+                ))}
               </div>
             </div>
             
