@@ -112,12 +112,33 @@ export default function Home() {
     { name: "Contact", id: "contact" },
   ];
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Inquiry Sent Successfully",
-      description: "Balaji will get back to you shortly.",
-    });
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    // Submit to Web3Forms (client-side). We add the access_key to the FormData.
+    const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+    try {
+      data.append('access_key', 'ce90a8c7-3285-4660-ad6b-d8f8c9b806c9');
+      data.append('subject', 'Website Inquiry');
+
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        toast({ title: 'Inquiry Sent Successfully', description: 'Balaji will get back to you shortly.' });
+        form.reset();
+      } else {
+        toast({ title: 'Failed to send', description: 'Please try again or call directly.', variant: 'destructive' });
+      }
+    } catch (err) {
+      console.error('Form submit error', err);
+      toast({ title: 'Failed to send', description: 'Please try again or call directly.', variant: 'destructive' });
+    }
   };
 
   const logoUrl = "/balaji-logo.jpeg";
@@ -801,11 +822,11 @@ export default function Home() {
                 <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Full Name</label>
-                    <Input required placeholder="John Doe" className="h-14 bg-gray-50 border-gray-200 text-lg rounded-xl focus-visible:ring-primary" />
+                    <Input required name="name" placeholder="John Doe" className="h-14 bg-gray-50 border-gray-200 text-lg rounded-xl focus-visible:ring-primary" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Phone Number</label>
-                    <Input required type="tel" placeholder="+91 XXXXX XXXXX" className="h-14 bg-gray-50 border-gray-200 text-lg rounded-xl focus-visible:ring-primary" />
+                    <Input required name="phone" type="tel" placeholder="+91 XXXXX XXXXX" className="h-14 bg-gray-50 border-gray-200 text-lg rounded-xl focus-visible:ring-primary" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Requirement</label>
@@ -823,7 +844,7 @@ export default function Home() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Message</label>
-                    <Textarea placeholder="How can I help you?" className="min-h-[150px] bg-gray-50 border-gray-200 resize-none text-lg rounded-xl focus-visible:ring-primary" />
+                    <Textarea name="message" placeholder="How can I help you?" className="min-h-[150px] bg-gray-50 border-gray-200 resize-none text-lg rounded-xl focus-visible:ring-primary" />
                   </div>
                   <Button type="submit" className="w-full h-16 text-xl rounded-xl shadow-lg font-bold">
                     Send Inquiry
